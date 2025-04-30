@@ -13,6 +13,11 @@ class _HomePageState extends State<HomePage> {
   List toDoList = [
     ["make todo app", false],
     ["do exercise", false],
+    ["eat", true],
+    ["sleep", false],
+    ["Do work", true],
+    ["Do work", true],
+    ["Do work", true],
   ];
 
   // checkbox clicked
@@ -25,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Colors.yellow[100],
       appBar: AppBar(
         title: Center(child: Text('TO DO')),
         backgroundColor: Colors.yellowAccent[700],
