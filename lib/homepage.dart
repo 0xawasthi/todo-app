@@ -33,11 +33,20 @@ class _HomePageState extends State<HomePage> {
       // backgroundColor: Colors.yellow[100],
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: Center(child: Text('TO DO')),
+        title: Center(
+          child: Text('TO DO', style: TextStyle(fontWeight: FontWeight.bold)),
+        ),
         // backgroundColor: Colors.yellowAccent[700],
         backgroundColor: Colors.black45,
         elevation: 0,
       ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add, color: Colors.black),
+        backgroundColor: Color(0xff60a5fa),
+      ),
+
       body: ListView.builder(
         itemCount: toDoList.length,
         itemBuilder: (context, index) {
