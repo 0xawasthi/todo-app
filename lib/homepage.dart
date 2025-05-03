@@ -10,15 +10,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // text controller
+  final controller = TextEditingController();
+
   // List of to do task
   List toDoList = [
     ["make todo app", false],
     ["do exercise", false],
     ["eat", true],
-    ["sleep", false],
-    ["Do work", true],
-    ["Do work", true],
-    ["Do work", true],
   ];
 
   // checkbox clicked
@@ -28,11 +27,25 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // save new task
+  void saveNewTask() {
+    setState(() {
+      toDoList.add([controller.text, false]);
+      controller.clear();
+    });
+    Navigator.of(context).pop();
+  }
+
+  //  create new task
   void createNewTask() {
     showDialog(
       context: context,
       builder: (context) {
-        return DialogBox();
+        return DialogBox(
+          controller: controller,
+          onSave: saveNewTask,
+          onCancel: () => Navigator.of(context).pop(),
+        );
       },
     );
   }
@@ -40,13 +53,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.yellow[100],
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Center(
           child: Text('TO DO', style: TextStyle(fontWeight: FontWeight.bold)),
         ),
-        // backgroundColor: Colors.yellowAccent[700],
         backgroundColor: Colors.black45,
         elevation: 0,
       ),
