@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: createNewTask,
         child: Icon(Icons.add, color: Colors.black),
-        backgroundColor: Color(0xff60a5fa),
+        backgroundColor: Color(0xff48bfe3),
       ),
 
       body: ListView.builder(
