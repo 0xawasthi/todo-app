@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ToDoTile extends StatelessWidget {
   final String taskName;
   final bool taskCompleted;
+  final VoidCallback onPressed;
   Function(bool?)? onChanged;
 
   ToDoTile({
@@ -10,6 +11,7 @@ class ToDoTile extends StatelessWidget {
     required this.taskName,
     required this.taskCompleted,
     required this.onChanged,
+    required this.onPressed,
   });
 
   @override
@@ -45,7 +47,7 @@ class ToDoTile extends StatelessWidget {
 
             Expanded(child: SizedBox()),
             IconButton(
-              onPressed: () {},
+              onPressed: onPressed,
               icon: Icon(Icons.delete),
               color: Colors.red,
             ),
